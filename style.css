@@ -105,6 +105,7 @@ a:hover{
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1
 }
 .dropdown_menu.open{
     height: 240px;
@@ -122,8 +123,37 @@ a:hover{
 }
 /* main */
 main{
-    text-align: center;
     grid-area: main;
+}
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2rem;
+}
+section{
+    padding: 0 15%;
+}
+.hero_text h1{
+    font-family: 'Permanent Marker',cursive;
+    font-size: 90px;
+    line-height: 1;
+    color: #fff;
+    margin: 0 0 45px;
+}
+.hero_text p{
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+.hero_img img{
+    width: 700px;
+    height: auto;
 }
 main p{
     font-size: 20px;
@@ -187,6 +217,33 @@ footer{
     grid-area: footer; 
 }
 /* media query */
+@media (max-width:1340px) {
+    .hero_img img{
+        width: 100%;
+        height: auto;
+    }
+    .hero_text h1{
+        font-size: 75px;
+        margin: 0 0 30px;
+    }
+}
+@media (max-width:1195px) {
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero_text{
+        padding-top: 115px;
+    }
+    .hero_img{
+        text-align: center;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width:992px) {
     .navbar .links,
     .navbar .action_btn{
